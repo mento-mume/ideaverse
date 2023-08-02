@@ -8,6 +8,7 @@ import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { db } from "../firebase"; //import database from firbase
 import auth from "../firebase"; // Import the auth object from firebase.js
+import OAuth from "../components/OAuth";
 const SignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -145,7 +146,7 @@ const SignUp = () => {
               <div className="h-px bg-[#CFDFE2]" />
             </div>
             <div className="flex gap-4">
-              <Button icon={<Google />} text={"Google"} />
+              <OAuth />
               <Button icon={<FbIcon />} text={"Facebook"} />
             </div>
           </div>

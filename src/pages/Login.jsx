@@ -1,13 +1,14 @@
 import Logo from "../assets/images/Login Art.png";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import Google from "../assets/icons/Google";
+
 import FbIcon from "../assets/icons/FbIcon";
 import Button from "../components/Button";
 import { useState } from "react";
 import Icon from "../assets/icons/Icon";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import auth from "../firebase";
+import OAuth from "../components/OAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -100,7 +101,7 @@ const Login = () => {
 
               <Link
                 class="inline-block align-baseline font-bold text-sm text-blue-500  text-right hover:text-blue-800"
-                href="forgotpas.com"
+                to="/ForgotPassword"
               >
                 Forgot Password?
               </Link>
@@ -116,7 +117,7 @@ const Login = () => {
               <div className="h-px bg-[#CFDFE2]" />
             </div>
             <div class="flex gap-4 md:flex-col">
-              <Button icon={<Google />} text={"Google"} />
+              <OAuth />
               <Button icon={<FbIcon />} text={"Facebook"} />
             </div>
           </div>

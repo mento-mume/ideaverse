@@ -6,6 +6,7 @@ import SignUp from "./pages/signUp";
 import Error from "./pages/Error";
 import PrivateRouteLayout from "./Layout/PrivateRouteLayout";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import ForgetPassword from "./pages/ForgetPassword";
 function App() {
   return (
     <>
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Error" element={<Error />} />
+          <Route path="/ForgotPassword" element={<ForgetPassword />} />
+          <Route path="*" element={<Error />} />
 
           {/* protected */}
           <Route element={<PrivateRouteLayout />}>
